@@ -1,0 +1,11 @@
+asgiref==3.8.1
+diff-match-patch==20241021
+Django==5.1.2
+django-debug-toolbar==4.4.6
+django-extensions==3.2.3
+django-grappelli==4.0.1
+django-import-export==4.2.0
+pydot==3.0.2
+pyparsing==3.2.0
+sqlparse==0.5.1
+tablib==3.7.0
