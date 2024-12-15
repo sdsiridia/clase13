@@ -18,16 +18,18 @@ from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
 
-from .views import home_view, contact_view # importamos la funsion que esta en el otro archivo
+from .views import home_view, contact_view, search_view # importamos la funsion que esta en el otro archivo
 
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
-    path("",home_view),
+    path("",home_view,name='home'),
 
-    path("",include('books.urls')), # importamos las url de book 
+    path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las "" puede escribir cualuier cosa, es para que las urs en la barra esten dentro de una subcategoria, si no pongo nada solo cambia la url 
 
-    path("contacto/",contact_view),
+    path("buscar/",search_view,name='search'),
+
+    path("contacto/",contact_view,name='contacto'),
     path('admin/', admin.site.urls),
 ] + debug_toolbar_urls()
 

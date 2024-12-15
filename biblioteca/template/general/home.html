@@ -1,19 +1,8 @@
-<!-- para crear una plantilla html uso htlm:5 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Esto es la Home</h1>
-    <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a href="/autores">Autores</a></li>
-        <li><a href="/libros">Libros</a></li>
-        <li><a href="/editoriales">Editoriales</a></li>
-    </ul>
-</body>
-</html>
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Inicio{% endblock %}</title>
+<h1>{% block page_title %}Bienvenido a Nuestra Página{%endblock%}</h1>
+
+{%block paga_content %}
+        <p>Esta es mi página de inicio</p>
+    {%endblock%}

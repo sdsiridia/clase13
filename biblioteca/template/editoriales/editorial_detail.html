@@ -1,0 +1,27 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Detalles de Editorial {% endblock %}</title>
+<h1>{% block page_title %}Detalles de Editorial{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Lista Completa detalles por Editorial</h2>
+    
+    {% if editorial %}
+    
+        <h3>Nombre del editorial: {{ editorial.nombre }}</h3>
+        <p>Direccion: {{ editorial.direccion }}</p>
+        <p>Email: {{ editorial.email }}</p>
+
+        <p><a href="{%url 'books:editorial_list'%}">Volver a la Lista de editoriales</a></p>
+
+    {%else%}
+
+        <h2>No se ha encontrado el editorial que buscabas</h2>
+        <p>Puedes probar de nuevo en <a href="{%url 'books:editorial_list'%}">la lista de Editoriales</a></p>
+
+    {% endif %}
+
+{%endblock%}
+    
+  
+    

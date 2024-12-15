@@ -1,0 +1,21 @@
+<!-- para crear una plantilla html uso htlm:5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}Titulo Base{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block page_title %}Titulo Base{%endblock%}</h1>
+    
+    {% include "_include/_menu_principal.html" %}
+
+    {%block paga_content %}
+        
+    {%endblock%}
+
+    {% include "_include/_footer_principal.html" %}
+</body>
+</html>
+

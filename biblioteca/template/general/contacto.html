@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-</head>
-<body>
-    <h1>Esta es la Pàgina de Contacto</h1>
-    <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a href="/autores">Autores</a></li>
-        <li><a href="/libros">Libros</a></li>
-        <li><a href="/editoriales">Editoriales</a></li>
-    </ul>
-    </ul>
-</body>
-</html>
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Contacto{% endblock %}</title>
+<h1>{% block page_title %}Contacta con nosotros{%endblock%}</h1>
+
+{%block paga_content %}
+        <form action="" method="post">
+            {% csrf_token %}
+          {{ formulario.as_p }}
+            <button>Enviar</button>
+        </form>
+        <p>Escribenos a: <a href="mailto:pablorossa@gmail.com">pablorossa@gmail.com</a></p>
+    {%endblock%}

@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autores</title>
-</head>
-<body>
-    <h1>Esta es la Pàgina de Autores</h1>
-    <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a href="/autores">Autores</a></li>
-        <li><a href="/libros">Libros</a></li>
-        <li><a href="/editoriales">Editoriales</a></li>
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de ContacAutores{% endblock %}</title>
+<h1>{% block page_title %}Autores{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Lista Completa de Autores</h2>
+    <ul>{%  for autor in autores %} <!-- autores es el nombre de la lista que esta difinida en autores_view.py-->
+        <li><a href="{% url 'books:autor_detail' autor.id %}">{{autor.nombre}}</a></li> <!--como es un diccionario puedo acceder a los campos por eso puedo hacer .nombre-->
+    {% endfor %}
     </ul>
-    </ul>
-</body>
-</html>
+{%endblock%}
+    
+    
