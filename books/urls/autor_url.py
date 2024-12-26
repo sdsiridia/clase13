@@ -1,8 +1,7 @@
 ''' Autores todas las urls'''
 from django.urls import path
 
-
-from books.views import (
+from books.views.autores_views import (
     AutorDetailView,
     AutorListView,
     AutorCreateView,

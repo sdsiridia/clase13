@@ -1,0 +1,34 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Detalles de Libro {% endblock %}</title>
+<h1>{% block page_title %}Detalles de Libro{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Lista Completa detalles por Editorial</h2>
+    
+    {% if libro %}
+    
+        <h3>Nombre del libro: {{ libro.titulo }}</h3>
+        <p>Fecha: {{ libro.fecha_publicacion }}</p>
+        <p>Paginas: {{ libro.numero_paginas }}</p>
+        
+        
+        <p><a href="{% url 'libro:update' libro.pk %}">Editar</a> - 
+            <a href="{% url 'libro:delete' libro.pk %}">Eliminar</a></p>
+        
+
+        
+        
+            <p><a href="{%url 'libro:list'%}">Volver a la Lista de Libro</a></p>
+
+    {%else%}
+
+        <h2>No se ha encontrado el libro que buscabas</h2>         
+        <p>Puedes probar de nuevo en <a href="{%url 'libro:list'%}">la lista de Libros</a></p>
+
+    {% endif %}
+
+{%endblock%}
+    
+  
+    

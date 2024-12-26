@@ -1,0 +1,15 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Libros{% endblock %}</title>
+<h1>{% block page_title %}Nuevo Libro{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Datos del Libro</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Create Libro</button>
+        <a href="{% url 'libro:list' %}">Cancelar</a>
+    </form>
+   
+{%endblock%}
