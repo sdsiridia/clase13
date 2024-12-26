@@ -1,0 +1,14 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de ContacAutores{% endblock %}</title>
+<h1>{% block page_title %}Autores{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Lista Completa de Autores</h2>
+    <ul>{%  for autor in autores %} <!-- autores es el nombre de la lista que esta difinida en autores_view.py-->
+        <li><a href="{% url 'autor:detail' autor.id %}">{{autor.nombre}}</a></li> <!--como es un diccionario puedo acceder a los campos por eso puedo hacer .nombre-->
+    {% endfor %}
+    </ul>
+{%endblock%}
+    
+    

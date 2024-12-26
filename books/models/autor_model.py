@@ -1,11 +1,13 @@
+'''modelo de un autor'''
 from django.db import models
 
 
 # Modelo para Autores
 class Autor(models.Model):
+    '''campos de un autor'''
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=200)
-    fecha_nacimiento = models.DateField()
+    f_nac = models.DateField()
     nacionalidad = models.CharField(max_length=100)
     biografia = models.TextField()
     email = models.EmailField()
