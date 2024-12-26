@@ -15,10 +15,10 @@ class Libro(models.Model):
         "EN": "Inglés",
     }
 
-    idioma = models.CharField(max_length=2, choices=LANGS_CHOICES, default="ES")
+    idioma = models.CharField(max_length=2, choices=LANGS_CHOICES, default="ES", blank=True, null=True)
     descripcion = models.TextField(blank=True, null=True)
     editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE, blank=True, null=True)
-    autores = models.ManyToManyField(Autor)
+    autores = models.ManyToManyField(Autor, blank=True, null=True)
     genero = models.CharField(max_length=100, blank=True, null=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     is_out_of_stock = models.BooleanField('Está fuera de stock', default=False)

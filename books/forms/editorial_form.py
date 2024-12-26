@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm,Form
+from django.forms import ModelForm
 from books.models import Editorial
 
 class EditorialCreate(forms.Form):
@@ -19,4 +19,8 @@ class EditorialCreate(forms.Form):
       if len(nombre)<5:
          raise forms.ValidationError("El nombre debe tener al menos 5 caracteres")
       return nombre
-   
+
+class EditorialModelFormCreate(ModelForm):
+    class Meta:
+        model = Editorial
+        fields = ['nombre','direccion','email','fecha_fundacion']   

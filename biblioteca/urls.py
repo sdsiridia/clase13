@@ -25,9 +25,13 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path("",home_view,name='home'),
 
-    path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las "" puede escribir cualuier cosa, es para que las urs en la barra esten dentro de una subcategoria, si no pongo nada solo cambia la url 
+    #path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las "" puede escribir cualuier cosa, es para que las urs en la barra esten dentro de una subcategoria, si no pongo nada solo cambia la url 
 
     path("buscar/",search_view,name='search'),
+
+    path('editorial/',include('books.urls.editorial_url',namespace='editorial')),
+    path('autor/',include('books.urls.autor_url',namespace='autor')),
+    path('libro/',include('books.urls.libro_url',namespace='libro')),
 
     path("contacto/",contact_view,name='contacto'),
     path('admin/', admin.site.urls),

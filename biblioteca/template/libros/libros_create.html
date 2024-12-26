@@ -1,0 +1,12 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Libros{% endblock %}</title>
+<h1>{% block page_title %}Crear Libros{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>Nuevo Libro</h2>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button>Guardar</button>
+    </form>
+{%endblock%}

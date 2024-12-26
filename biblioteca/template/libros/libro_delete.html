@@ -1,0 +1,13 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Libros{% endblock %}</title>
+<h1>{% block page_title %}Eliminar Libros{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>¿Eliminar Libro {{ object.titulo }}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Eliminar</button>
+    </form>
+{%endblock%}

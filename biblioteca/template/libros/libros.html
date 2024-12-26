@@ -4,5 +4,20 @@
 <h1>{% block page_title %}Libros{%endblock%}</h1>
 
 {%block paga_content %}
-    <h2>Lista Completa de Libros</h2>
-{%endblock%}
+<h2>Menu</h2>
+<ul>
+    <li><a href="{% url 'books:libro_create' %}">Nuevo Libro</a></li>
+
+</ul>
+
+
+<h2>Lista Completa de Libros</h2>
+    <ul>
+        {% for libro in libros %}
+            <li><a href = "">{{ libro.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+
+
+
+    {%endblock%}

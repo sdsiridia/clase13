@@ -1,0 +1,15 @@
+{% extends "general/layout.html" %}
+
+<title>{% block head_title %}Pagina de Editoriales{% endblock %}</title>
+<h1>{% block page_title %}Nueva Editorial{%endblock%}</h1>
+
+{%block paga_content %}
+    <h2>¿Eliminar Editorial: {{ object.nombre }}?</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Eliminar Editorial</button>
+        <a href="{% url 'editorial:detail' object.pk %}">Cancelar</a>
+    </form>
+   
+{%endblock%}

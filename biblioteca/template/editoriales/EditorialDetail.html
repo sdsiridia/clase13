@@ -11,13 +11,20 @@
         <h3>Nombre del editorial: {{ editorial.nombre }}</h3>
         <p>Direccion: {{ editorial.direccion }}</p>
         <p>Email: {{ editorial.email }}</p>
+        
+        
+        <p><a href="{% url 'editorial:update' editorial.pk %}">Editar</a> - 
+            <a href="{% url 'editorial:delete' editorial.pk %}">Eliminar</a></p>
+        
 
-        <p><a href="{%url 'books:editorial_list'%}">Volver a la Lista de editoriales</a></p>
+        
+        
+            <p><a href="{%url 'editorial:list'%}">Volver a la Lista de editoriales</a></p>
 
     {%else%}
 
-        <h2>No se ha encontrado el editorial que buscabas</h2>
-        <p>Puedes probar de nuevo en <a href="{%url 'books:editorial_list'%}">la lista de Editoriales</a></p>
+        <h2>No se ha encontrado el editorial que buscabas</h2>         
+        <p>Puedes probar de nuevo en <a href="{%url 'editorial:list'%}">la lista de Editoriales</a></p>
 
     {% endif %}
 
