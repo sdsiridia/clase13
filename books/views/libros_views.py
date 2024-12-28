@@ -107,8 +107,6 @@ class LibroUpdateView(UpdateView):
               'precio',
               'is_out_of_stock'
               ]
-    # widgets = {'LANGS_CHOICES': forms.CheckboxSelectMultiple,  # Usar casillas de verificación
-    #           }
 
 
 class LibroDeleteView(DeleteView):
