@@ -9,10 +9,28 @@ from .form import ContactForms
 
 
 def home_view(request):
-    ''' inicio'''
+
     # la funsion render necesita 2 parametros un request y un archivo para renderizar
     return render(request, "general/home.html")
 
+
+# def search_view(request):
+#     if request.GET:
+#         busqueda = request.GET['q']
+
+#         autores = Autor.objects.filter(nombre__icontains=busqueda)
+#         editoriales = Editorial.objects.filter(nombre__icontains=busqueda)
+#         libros = Libro.objects.filter(titulo__icontains=busqueda)
+
+#         context = {
+#             'autores': autores,
+#             'editoriales': editoriales,
+#             'libros': libros
+#         }
+#         return render(request, "general/search.html", context)
+
+
+#     return render(request, "general/search.html")
 
 def search_view(request):
     '''busqueda'''

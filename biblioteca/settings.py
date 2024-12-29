@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent # de donde me encuentro "__file__" me voy 2 niveles de directorio màs arriba ".parent.parent"
-TEMPLATES_DIR = BASE_DIR / "biblioteca" / "template" # creo una variable para indicar donde guardo mis templates
+# de donde me encuentro "__file__" me voy 2 niveles de directorio màs arriba ".parent.parent"
+BASE_DIR = Path(__file__).resolve().parent.parent
+# creo una variable para indicar donde guardo mis templates
+TEMPLATES_DIR = BASE_DIR / "biblioteca" / "template"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -38,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'debug_toolbar',
     'django_extensions',
     'import_export',
-    
+
     'books'
 
 
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "books.custom_middleware.TiempoDeProcesamientoMiddleware",
 ]
 
 ROOT_URLCONF = 'biblioteca.urls'
@@ -64,7 +67,7 @@ ROOT_URLCONF = 'biblioteca.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR,], #se coloca "," por que es una lista
+        'DIRS': [TEMPLATES_DIR,],  # se coloca "," por que es una lista
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "biblioteca.current_processor.get_current_year_context_processor",
+                "biblioteca.current_processor.get_statistic_books",
             ],
         },
     },
