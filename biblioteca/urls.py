@@ -17,25 +17,57 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
+from django.conf import settings
+
+from django.urls import include, re_path
 
 # importamos la funsion que esta en el otro archivo
-from .views import home_view, contact_view, search_view
+from .views import home_view, contact_view, search_view, SetLanguageView
 
+from django.conf.urls.i18n import i18n_patterns
+
+# urlpatterns = [
+#     path('grappelli/', include('grappelli.urls')),  # grappelli URLS
+#     re_path(r'^rosetta/', include('rosetta.urls')),
+#     path('set-language/', SetLanguageView.as_view(),name='set_language'),
+#     path("", home_view, name='home'),
+
+#     # path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las ""
+#     # puede escribir cualuier cosa, es para que las urs en la barra esten
+#     # dentro de una subcategoria, si no pongo nada solo cambia la url
+
+    
+
+#     path('editorial/', include('books.urls.editorial_url', namespace='editorial')),
+#     path('autor/', include('books.urls.autor_url', namespace='autor')),
+#     path('libro/', include('books.urls.libro_url', namespace='libro')),
+
+#     path("contacto/", contact_view, name='contacto'),
+#     path('admin/', admin.site.urls),
+# ] + debug_toolbar_urls()
+
+
+# urlpatterns +=i18n_patterns[
+#             path("buscar/", search_view, name='search'),
+# ]
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),  # grappelli URLS
-    path("", home_view, name='home'),
+    path('i18n/', include('django.conf.urls.i18n')),  # Incluir la vista 'set_language'
+] + debug_toolbar_urls()
 
-    # path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las ""
-    # puede escribir cualuier cosa, es para que las urs en la barra esten
-    # dentro de una subcategoria, si no pongo nada solo cambia la url
-
-    path("buscar/", search_view, name='search'),
-
+urlpatterns += i18n_patterns(
+    path("admin/", admin.site.urls),
+    path("buscar/", search_view, name="search"),
+    path("", home_view, name="home"),
     path('editorial/', include('books.urls.editorial_url', namespace='editorial')),
     path('autor/', include('books.urls.autor_url', namespace='autor')),
     path('libro/', include('books.urls.libro_url', namespace='libro')),
 
-    path("contacto/", contact_view, name='contacto'),
-    path('admin/', admin.site.urls),
-] + debug_toolbar_urls()
+    path("contacta-con-nosotros/", contact_view, name="contacto"),
+)
+
+# si rosatta esta instalado anade las urls de rosetta
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls'))
+    ]

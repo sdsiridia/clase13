@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block head_title %}Titulo Base{% endblock %}</title>
+
+<style>
+    .message {
+        background-color:#ccc;
+        color: black;
+        padding: 10px;
+    }
+    .message.info{
+        background-color:blue;
+    }
+    .message.error{
+        background-color:red;
+        color: white;
+    }
+</style>
+
 </head>
 <body>
     <h1>{% block page_title %}Titulo Base{%endblock%}</h1>

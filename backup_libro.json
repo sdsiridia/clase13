@@ -1,0 +1,362 @@
+[
+{
+    "model": "books.libro",
+    "pk": 1,
+    "fields": {
+        "titulo": "",
+        "titulo_es": "Titulo1",
+        "titulo_en": "Title",
+        "isbn": "1234567890121",
+        "fecha_publicacion": "2011-01-01",
+        "numero_paginas": 101,
+        "idioma": "Idioma",
+        "descripcion": null,
+        "descripcion_es": "Esta es la descripcion en Español",
+        "descripcion_en": "This is a descripcion in English",
+        "editorial": 2,
+        "genero": "Género",
+        "precio": "20.99",
+        "is_out_of_stock": false,
+        "autores": [
+            4,
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 3,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890123",
+        "fecha_publicacion": "2013-01-01",
+        "numero_paginas": 103,
+        "idioma": "Idioma",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 4,
+        "genero": "Género",
+        "precio": "22.99",
+        "is_out_of_stock": false,
+        "autores": [
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 4,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890124",
+        "fecha_publicacion": "2014-01-01",
+        "numero_paginas": 104,
+        "idioma": "Idioma",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 5,
+        "genero": "Género",
+        "precio": "23.99",
+        "is_out_of_stock": false,
+        "autores": [
+            3,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 6,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890126",
+        "fecha_publicacion": "2016-01-01",
+        "numero_paginas": 106,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 7,
+        "genero": "Género",
+        "precio": "25.99",
+        "is_out_of_stock": false,
+        "autores": [
+            3,
+            4,
+            9,
+            11
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 7,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890127",
+        "fecha_publicacion": "2017-01-01",
+        "numero_paginas": 107,
+        "idioma": "Idioma",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 8,
+        "genero": "Género",
+        "precio": "26.99",
+        "is_out_of_stock": false,
+        "autores": [
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 8,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890128",
+        "fecha_publicacion": "2018-01-01",
+        "numero_paginas": 108,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 9,
+        "genero": "Género",
+        "precio": "27.99",
+        "is_out_of_stock": false,
+        "autores": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 9,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567890129",
+        "fecha_publicacion": "2019-01-01",
+        "numero_paginas": 109,
+        "idioma": "Idioma",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 10,
+        "genero": "Género",
+        "precio": "28.99",
+        "is_out_of_stock": false,
+        "autores": [
+            1,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 10,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "1234567830121",
+        "fecha_publicacion": "2020-01-01",
+        "numero_paginas": 110,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 1,
+        "genero": "Género",
+        "precio": "29.99",
+        "is_out_of_stock": false,
+        "autores": [
+            1,
+            7,
+            11
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 11,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "askdnfdsfmvsd",
+        "fecha_publicacion": "2020-10-10",
+        "numero_paginas": 1111,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": null,
+        "genero": null,
+        "precio": null,
+        "is_out_of_stock": false,
+        "autores": [
+            11
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 12,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "lzmlvsdbs gk",
+        "fecha_publicacion": "2021-10-10",
+        "numero_paginas": 100,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": null,
+        "genero": null,
+        "precio": null,
+        "is_out_of_stock": false,
+        "autores": []
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 13,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "asdvasdvadsv",
+        "fecha_publicacion": "2020-10-10",
+        "numero_paginas": 111,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": null,
+        "genero": null,
+        "precio": null,
+        "is_out_of_stock": false,
+        "autores": []
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 14,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "sdlfkmsdfpkvf",
+        "fecha_publicacion": "2020-10-10",
+        "numero_paginas": 500,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": null,
+        "genero": null,
+        "precio": null,
+        "is_out_of_stock": false,
+        "autores": []
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 15,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "adslksj",
+        "fecha_publicacion": "2024-10-10",
+        "numero_paginas": 10000,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 12,
+        "genero": "pop",
+        "precio": "100.00",
+        "is_out_of_stock": false,
+        "autores": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 16,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "zxfdkgmwlk",
+        "fecha_publicacion": "2024-10-10",
+        "numero_paginas": 100,
+        "idioma": "EN",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 13,
+        "genero": "pop",
+        "precio": "100000.00",
+        "is_out_of_stock": false,
+        "autores": [
+            2,
+            3,
+            11,
+            12
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 17,
+    "fields": {
+        "titulo": "",
+        "titulo_es": null,
+        "titulo_en": null,
+        "isbn": "sadgsdf",
+        "fecha_publicacion": "2024-10-10",
+        "numero_paginas": 112,
+        "idioma": "ES",
+        "descripcion": null,
+        "descripcion_es": null,
+        "descripcion_en": null,
+        "editorial": 5,
+        "genero": "pop",
+        "precio": "1111.00",
+        "is_out_of_stock": false,
+        "autores": [
+            1,
+            2,
+            11
+        ]
+    }
+}
+]

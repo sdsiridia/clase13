@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'import_export',
+    'rosetta',
+    'modeltranslation',
 
-    'books'
+    'books',
 
 
 ]
@@ -53,6 +55,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # asegurarse de que este antes de CSRF y despues de session
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.i18n", # añadido para poder tener disponible LANGUAGE en las plantillas
                 "biblioteca.current_processor.get_current_year_context_processor",
                 "biblioteca.current_processor.get_statistic_books",
             ],
@@ -94,6 +99,22 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# # Cambiamos a base de datos msql
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mydb',                      # Nombre de la base de datos
+#         'USER': 'django_user_db',             # Usuario creado para la base de datos
+#         'PASSWORD': 'django_user_pass',       # Contraseña del usuario
+#         'HOST': '127.0.0.1',                  # Dirección IP del host (localhost o la IP de tu máquina)
+#         'PORT': '3306',                       # Puerto por defecto de MySQL
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#         }
+#     }
+# }
 
 
 # Password validation
@@ -118,14 +139,34 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+LANGUAGE_CODE = 'es-ES' # idioma por defecto
 
 TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
+PREFIX_DEFAULT_LANGUAGE = True # si quiero un prefijo para el idioma por defecto en la url
+
+# definir las opciones de idioma disponible
+LENGUAGES = [
+    ('en','English'),
+    ('es','Español'),
+]
+
+# definir la ruta donde se guardan los archivos de traducción
+
+LOCALE_PATHS = [
+    BASE_DIR /  'locale', # 'locale' sera la carpeta donde se guardan las traducciones
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en' # para usar model translation tenemso que decir el idioma por defecto en esta variable
+MODELTRANSLATION_LANGUAGES = ('es', 'en') # idiomas para la traducción
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('es',) # si el modelo no tiene traduccion para el idoma seleccionado por defecto uso español
+#MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es' # esto es para el admin idioma por defecto
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -142,3 +183,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+LANGUAGE_COOKIE_NAME = 'django.language' # este es el valor por defecto se puede personalizar

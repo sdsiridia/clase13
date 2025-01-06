@@ -1,9 +1,10 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _lazy
 
 class ContactForms(forms.Form):
-   nombre = forms.CharField(max_length=140, label="Nombre")
-   email = forms.EmailField(label="Email")
-   comentario = forms.CharField(max_length=1000, label="Comentario", widget=forms.Textarea)
+   nombre = forms.CharField(max_length=140, label=_lazy("Nombre"))
+   email = forms.EmailField(label=_lazy("Correo"))
+   comentario = forms.CharField(max_length=1000, label=_lazy("Comentario"), widget=forms.Textarea)
 
    # puedo definir funciones con clean_<nombre_del_campo> para realizar validaciones, ejemplo:
 
