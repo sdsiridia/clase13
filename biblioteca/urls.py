@@ -14,17 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
+from django.urls import path, include # , re_path
+from debug_toolbar.toolbar import debug_toolbar_urls
 
-from django.urls import include, re_path
+
+# from django.urls import include
 
 # importamos la funsion que esta en el otro archivo
-from .views import home_view, contact_view, search_view, SetLanguageView
+from .views import home_view, contact_view, search_view #, SetLanguageView
 
-from django.conf.urls.i18n import i18n_patterns
+
 
 # urlpatterns = [
 #     path('grappelli/', include('grappelli.urls')),  # grappelli URLS
@@ -35,9 +37,8 @@ from django.conf.urls.i18n import i18n_patterns
 #     # path("",include('books.urls',namespace='books')), # en esta parte path(""  entre las ""
 #     # puede escribir cualuier cosa, es para que las urs en la barra esten
 #     # dentro de una subcategoria, si no pongo nada solo cambia la url
-
-    
-
+#
+#
 #     path('editorial/', include('books.urls.editorial_url', namespace='editorial')),
 #     path('autor/', include('books.urls.autor_url', namespace='autor')),
 #     path('libro/', include('books.urls.libro_url', namespace='libro')),
@@ -70,4 +71,4 @@ urlpatterns += i18n_patterns(
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [
         path('rosetta/', include('rosetta.urls'))
-    ]
+                    ]
